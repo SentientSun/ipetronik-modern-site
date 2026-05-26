@@ -1,1 +1,1193 @@
-...full index.html content would go here...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IPETRONIK – 360° engineering for the mobility of the future. Mobile measurement technology, DAQ software, engineering services and test bench technology for automotive and aerospace.">
+    <title>IPETRONIK • 360° engineering for the mobility of the future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+
+        :root {
+            --ip-blue: #0033A0;
+            --ip-red: #E30613;
+            --ip-gold: #C5A46E;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Brand-faithful logo styling */
+        .ip-logo {
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .ip-logo .blue { color: #0033A0; }
+        .ip-logo .red { color: #E30613; }
+
+        .section-header {
+            font-size: clamp(2rem, 4.2vw, 2.85rem);
+            line-height: 1.05;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: #0f172a;
+        }
+
+        .nav-link {
+            transition: color 0.15s ease;
+        }
+        .nav-link:hover { color: #0033A0; }
+
+        .modern-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e2e8f0;
+        }
+        .modern-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+        }
+
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.08);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .premium-gradient {
+            background: linear-gradient(90deg, #0033A0, #1e40af);
+        }
+
+        .nav-scrolled {
+            box-shadow: 0 1px 0 0 #f1f5f9;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(12px);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .ip-red-line {
+            height: 3px;
+            background: linear-gradient(to right, #E30613, transparent);
+        }
+
+        .brand-header {
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .mega-menu {
+            animation: menuPop 0.2s ease forwards;
+        }
+        @keyframes menuPop {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .filter-btn.active {
+            background-color: #0033A0;
+            color: white;
+            border-color: #0033A0;
+        }
+
+        .product-tag {
+            font-size: 0.65rem;
+            letter-spacing: 0.5px;
+        }
+
+        .corporate-shadow {
+            box-shadow: 0 4px 6px -1px rgb(15 23 42 / 0.07), 0 2px 4px -2px rgb(15 23 42 / 0.07);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800">
+    <!-- TOP BRAND BAR -->
+    <div class="bg-[#0033A0] text-white text-xs py-1.5">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <div class="flex items-center gap-x-6">
+                <span class="font-medium">IPETRONIK GmbH &amp; Co. KG</span>
+                <span class="hidden md:inline text-white/70">• Part of INDUS Holding AG</span>
+            </div>
+            <div class="hidden md:flex items-center gap-x-5 text-white/80">
+                <a href="https://careers.ipetronik.com/en/" target="_blank" class="hover:text-white transition">Careers</a>
+                <span>|</span>
+                <span>Baden-Baden, Germany</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="sticky top-0 z-50 bg-white/95 transition-all border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="ip-logo text-3xl font-bold tracking-tighter flex items-baseline">
+                        <span class="blue">IPET</span><span class="red">R</span><span class="blue">ONIK</span>
+                    </div>
+                    <div class="hidden sm:block text-[10px] text-slate-400 font-mono tracking-wider -mt-1">EST. 1989</div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#about" class="nav-link text-slate-600 hover:text-slate-900">About</a>
+                    
+                    <div class="relative group">
+                        <button onclick="showMegaMenu()" 
+                                class="nav-link flex items-center gap-x-1 text-slate-600 hover:text-slate-900">
+                            Products &amp; Services
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </button>
+                    </div>
+                    
+                    <a href="#solutions" class="nav-link text-slate-600 hover:text-slate-900">Solutions</a>
+                    <a href="#global" class="nav-link text-slate-600 hover:text-slate-900">Global Presence</a>
+                    <a href="#careers" class="nav-link text-slate-600 hover:text-slate-900">Careers</a>
+                </div>
+
+                <div class="flex items-center gap-x-3">
+                    <button onclick="showProductFinder()" 
+                            class="hidden md:flex items-center gap-x-2 px-4 py-2 text-sm font-medium rounded-xl border border-slate-300 hover:bg-slate-50 transition">
+                        <i class="fa-solid fa-search text-xs"></i>
+                        <span>Product Finder</span>
+                    </button>
+                    
+                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-6 py-2.5 text-sm font-semibold rounded-xl bg-[#0033A0] text-white hover:bg-[#002a80] transition">
+                        Request Consultation
+                    </button>
+                    
+                    <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 flex items-center justify-center text-xl text-slate-600">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MEGA MENU -->
+    <div id="mega-menu" onclick="hideMegaMenu()" class="hidden fixed inset-0 z-[60] pt-20 bg-black/40">
+        <div onclick="event.stopImmediatePropagation()" class="max-w-6xl mx-auto px-6 pt-3">
+            <div class="bg-white border border-slate-200 rounded-2xl shadow-2xl p-8 mega-menu">
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <div class="uppercase text-xs tracking-[2px] font-semibold text-[#0033A0]">EXPLORE OUR PORTFOLIO</div>
+                        <div class="text-2xl font-semibold text-slate-900">Products &amp; Services</div>
+                    </div>
+                    <button onclick="hideMegaMenu()" class="text-3xl text-slate-400 hover:text-slate-600">×</button>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+                    <a href="#products" onclick="hideMegaMenu(); setTimeout(() => filterProducts('all'), 350)" class="group p-5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition">
+                        <div class="font-semibold group-hover:text-[#0033A0]">Data Loggers</div>
+                        <div class="text-xs text-slate-500 mt-1">IPE891, ARCOS 2 evo, ETHOS 2, M-LOG V3 and more</div>
+                    </a>
+                    <a href="#products" onclick="hideMegaMenu(); setTimeout(() => filterProducts('modules'), 350)" class="group p-5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition">
+                        <div class="font-semibold group-hover:text-[#0033A0]">Modules &amp; Sensors</div>
+                        <div class="text-xs text-slate-500 mt-1">M3-Series – the future of modular measurement</div>
+                    </a>
+                    <a href="#products" onclick="hideMegaMenu(); setTimeout(() => filterProducts('software'), 350)" class="group p-5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition">
+                        <div class="font-semibold group-hover:text-[#0033A0]">Software &amp; Digitalization</div>
+                        <div class="text-xs text-slate-500 mt-1">IPEmotion, IPEcloud2, dataLog, RT &amp; ME</div>
+                    </a>
+                    <a href="#products" onclick="hideMegaMenu(); setTimeout(() => filterProducts('testbenches'), 350)" class="group p-5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition">
+                        <div class="font-semibold group-hover:text-[#0033A0]">Test Benches</div>
+                        <div class="text-xs text-slate-500 mt-1">Customized turnkey solutions</div>
+                    </a>
+                    <a href="#products" onclick="hideMegaMenu(); setTimeout(() => filterProducts('engineering'), 350)" class="group p-5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition">
+                        <div class="font-semibold group-hover:text-[#0033A0]">Engineering Services</div>
+                        <div class="text-xs text-slate-500 mt-1">Individual solutions &amp; on-site support</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <header class="relative min-h-[92vh] flex items-center bg-slate-950 text-white overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="./assets/header-anwendungen-emobility-ipetronik-gmbh-und-co-kgx1920x800-46c70a3b.jpg" 
+                 alt="IPETRONIK e-mobility testing" 
+                 class="w-full h-full object-cover opacity-70">
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/70"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-6 pt-12 pb-16">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/20 text-xs font-medium tracking-widest mb-6">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#22f0d3] animate-pulse"></div>
+                    AUTOMOTIVE TESTING EXPO EUROPE 2026 — STUTTGART
+                </div>
+
+                <h1 class="font-display text-6xl md:text-[4.75rem] leading-[0.96] tracking-[-3.5px] font-semibold mb-6">
+                    360° engineering<br>for the mobility<br>of the future
+                </h1>
+                
+                <p class="max-w-md text-xl text-white/80 mb-10">
+                    Mobile measurement technology, DAQ software, engineering services and test bench technology for automotive and aerospace.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4">
+                    <button onclick="document.getElementById('applications').scrollIntoView({ behavior: 'smooth' })" 
+                            class="group px-9 py-4 bg-white text-slate-950 font-semibold rounded-2xl text-base flex items-center gap-3 hover:bg-[#22f0d3] transition-all active:scale-[0.985]">
+                        Explore Applications
+                        <span class="group-hover:translate-x-0.5 transition">→</span>
+                    </button>
+                    
+                    <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 py-4 border border-white/40 hover:bg-white/10 backdrop-blur rounded-2xl font-medium text-base transition">
+                        View Products
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center text-xs tracking-[2px] text-white/60">
+            SCROLL TO BEGIN
+            <div class="h-px w-6 bg-white/40 my-2"></div>
+        </div>
+    </header>
+
+    <!-- TRUST STATS -->
+    <div class="max-w-6xl mx-auto px-6 -mt-1">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 bg-white border border-slate-200 rounded-2xl p-7 md:p-8 corporate-shadow">
+            <div>
+                <div class="stat-number text-4xl font-semibold" data-target="250">250</div>
+                <div class="text-xs uppercase tracking-widest text-slate-500 mt-1">Employees worldwide</div>
+            </div>
+            <div class="border-l border-slate-200 pl-6">
+                <div class="stat-number text-4xl font-semibold" data-target="11">11</div>
+                <div class="text-xs uppercase tracking-widest text-slate-500 mt-1">Subsidiaries &amp; branches</div>
+            </div>
+            <div class="border-l border-slate-200 pl-6">
+                <div class="text-4xl font-semibold">1989</div>
+                <div class="text-xs uppercase tracking-widest text-slate-500 mt-1">Founded • Baden-Baden</div>
+            </div>
+            <div class="border-l border-slate-200 pl-6">
+                <div class="stat-number text-4xl font-semibold" data-target="10000">10,000+</div>
+                <div class="text-xs uppercase tracking-widest text-slate-500 mt-1">Measurements daily</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="max-w-7xl mx-auto px-6 pt-16">
+        <div class="flex items-end justify-between mb-6">
+            <div>
+                <div class="text-xs font-semibold tracking-[1.5px] text-[#E30613]">2025/2026 HIGHLIGHTS</div>
+                <h2 class="section-header">Next-generation systems</h2>
+            </div>
+            <a href="#products" class="hidden md:inline text-sm font-medium text-[#0033A0]">View full portfolio →</a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+            <!-- IPE891 -->
+            <div onclick="showProductModal('ipe891')" class="modern-card bg-white border border-slate-200 rounded-2xl overflow-hidden cursor-pointer group">
+                <img src="./assets/header-anwendungen-datenerfassung-ipetronik-gmbh-und-co-kgx1920x800-10526452.jpg" alt="IPETRONIK high-performance data acquisition in real-world testing" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between">
+                        <div class="product-tag px-3 py-0.5 bg-emerald-100 text-emerald-700 rounded font-medium text-xs">NEW</div>
+                        <div class="font-mono text-xs text-slate-400">IPE891</div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="font-semibold text-2xl tracking-tight">IPE891</div>
+                        <div class="text-sm text-slate-600 mt-1">Developed for the E/E System of the Future</div>
+                    </div>
+                    <div class="mt-5 text-xs border-t pt-4 text-slate-500 flex justify-between">
+                        <div>1000+ channels • 10GbE</div>
+                        <div class="text-[#0033A0] font-medium group-hover:underline">Details →</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ARCOS 2 evo -->
+            <div onclick="showProductModal('arcos2')" class="modern-card bg-white border border-slate-200 rounded-2xl overflow-hidden cursor-pointer group">
+                <img src="./assets/header-anwendungen-antrieb-ipetronik-gmbh-und-co-kgx1920x800-e9d086df.jpg" alt="IPETRONIK powertrain and drivetrain measurement" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between">
+                        <div class="product-tag px-3 py-0.5 bg-emerald-100 text-emerald-700 rounded font-medium text-xs">NEW</div>
+                        <div class="font-mono text-xs text-slate-400">ARCOS 2 evo</div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="font-semibold text-2xl tracking-tight">ARCOS 2 evo</div>
+                        <div class="text-sm text-slate-600 mt-1">Modular, Highly Compact, Powerful</div>
+                    </div>
+                    <div class="mt-5 text-xs border-t pt-4 text-slate-500 flex justify-between">
+                        <div>Scalable fleet testing</div>
+                        <div class="text-[#0033A0] font-medium group-hover:underline">Details →</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- M3-Series -->
+            <div onclick="showProductModal('m3')" class="modern-card bg-white border border-slate-200 rounded-2xl overflow-hidden cursor-pointer group">
+                <img src="./assets/nav-m3-serie-ece32f46.jpg" alt="IPETRONIK M3-Series modular measurement modules" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between">
+                        <div class="product-tag px-3 py-0.5 bg-violet-100 text-violet-700 rounded font-medium text-xs">M3 SERIES</div>
+                        <div class="font-mono text-xs text-slate-400">M3</div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="font-semibold text-2xl tracking-tight">M3-Series</div>
+                        <div class="text-sm text-slate-600 mt-1">Developed for the requirements of the future</div>
+                    </div>
+                    <div class="mt-5 text-xs border-t pt-4 text-slate-500 flex justify-between">
+                        <div>Modular • High-speed</div>
+                        <div class="text-[#0033A0] font-medium group-hover:underline">Details →</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNATURE PRODUCT DESIGN (from official Styleguide) -->
+    <section class="max-w-7xl mx-auto px-6 py-14">
+        <div class="text-center mb-10">
+            <div class="text-xs font-semibold tracking-[2px] text-[#E30613]">DESIGN PHILOSOPHY</div>
+            <h2 class="section-header tracking-[-1.5px] mt-2">The golden front frame.<br>Precision you can see.</h2>
+            <p class="max-w-xl mx-auto mt-4 text-slate-600">Every IPETRONIK product follows a clear design language: minimalist black housing, the iconic gold front frame as the visual and functional highlight, and a highly legible, structured HMI.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+            <div class="group bg-white border border-slate-200 rounded-3xl overflow-hidden">
+                <div class="relative">
+                    <img src="./assets/M-FLOW_und_Durchflussturbine_spiegelung-176662ae.png" class="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-[1.03]" alt="IPETRONIK M-FLOW sensor with premium finish">
+                </div>
+                <div class="p-6">
+                    <div class="uppercase text-[10px] tracking-[1.5px] text-[#0033A0] font-medium">01 — HOUSING</div>
+                    <div class="font-semibold text-xl mt-1 tracking-tight">Compact. Robust. Timeless.</div>
+                    <p class="text-sm text-slate-600 mt-3">Minimalist black enclosures engineered for extreme environments with perfect ergonomics and long-term durability.</p>
+                </div>
+            </div>
+
+            <div class="group bg-white border border-slate-200 rounded-3xl overflow-hidden">
+                <div class="relative">
+                    <img src="./assets/M-THERMO2 HV_Sammelstecker_spiegelung_V_iso_1000V_web-3ba66a39.png" class="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-[1.03]" alt="IPETRONIK device front showing the signature gold frame">
+                </div>
+                <div class="p-6">
+                    <div class="uppercase text-[10px] tracking-[1.5px] text-[#0033A0] font-medium">02 — GOLDEN FRONT FRAME</div>
+                    <div class="font-semibold text-xl mt-1 tracking-tight">The signature element.</div>
+                    <p class="text-sm text-slate-600 mt-3">The precisely machined gold frame is the unmistakable visual identity and the stage for intuitive, high-quality operation.</p>
+                </div>
+            </div>
+
+            <div class="group bg-white border border-slate-200 rounded-3xl overflow-hidden">
+                <div class="relative">
+                    <img src="./assets/nav-m3-serie-ece32f46.jpg" class="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-[1.03]" alt="IPETRONIK M3-Series modular measurement system with clear front interfaces and HMI">
+                </div>
+                <div class="p-6">
+                    <div class="uppercase text-[10px] tracking-[1.5px] text-[#0033A0] font-medium">03 — FRONT FOIL &amp; HMI</div>
+                    <div class="font-semibold text-xl mt-1 tracking-tight">Clarity meets performance.</div>
+                    <p class="text-sm text-slate-600 mt-3">Structured, highly legible interfaces designed for fast, error-free operation under real-world conditions. The M3-Series exemplifies this with its modular, intuitive front design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL-WORLD TESTING GALLERY -->
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+        <div class="flex items-end justify-between mb-8">
+            <div>
+                <div class="text-xs font-semibold tracking-[2px] text-[#E30613]">TESTING IN THE REAL WORLD</div>
+                <h3 class="text-4xl font-semibold tracking-tighter mt-1">Where precision meets reality</h3>
+            </div>
+            <div class="hidden md:block text-sm text-slate-500">High-end test environments worldwide</div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div class="group relative overflow-hidden rounded-3xl aspect-video">
+                <img src="./assets/product_hero_10_Akustik Simulation-a7f651ca.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Acoustic simulation chamber">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 p-5 text-white">
+                    <div class="text-xs tracking-widest opacity-75">ACOUSTICS</div>
+                    <div class="font-semibold text-xl tracking-tight">Acoustic Simulation</div>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-3xl aspect-video">
+                <img src="./assets/product_hero_14_NVH Systemakustikprüfstand-f62e174e.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="NVH system acoustic test bench">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 p-5 text-white">
+                    <div class="text-xs tracking-widest opacity-75">NVH</div>
+                    <div class="font-semibold text-xl tracking-tight">System Acoustic Test Bench</div>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-3xl aspect-video">
+                <img src="./assets/product_hero_15_HV-Ladesäule in Akustikkammer-1912d25e.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="HV charging station in acoustic chamber">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 p-5 text-white">
+                    <div class="text-xs tracking-widest opacity-75">E-MOBILITY</div>
+                    <div class="font-semibold text-xl tracking-tight">HV Charging in Acoustic Chamber</div>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-3xl aspect-video">
+                <img src="./assets/product_hero_16_Klima-Akustikkammer-9ba0acab.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Climate acoustic chamber">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 p-5 text-white">
+                    <div class="text-xs tracking-widest opacity-75">CLIMATE &amp; ACOUSTICS</div>
+                    <div class="font-semibold text-xl tracking-tight">Climate Acoustic Chamber</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPLICATIONS - Stunning Visual Section -->
+    <section id="applications" class="bg-slate-950 py-16 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <div class="text-[#22f0d3] text-xs tracking-[2.5px] font-semibold">REAL-WORLD APPLICATIONS</div>
+                    <h2 class="text-5xl font-semibold tracking-tighter mt-2">Precision measurement<br>across every challenge</h2>
+                </div>
+                <a href="#products" class="hidden md:flex items-center gap-2 text-sm font-medium text-[#22f0d3] group">
+                    SEE ALL SOLUTIONS <span class="group-hover:translate-x-1 transition">→</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- E-Mobility -->
+                <div class="group relative overflow-hidden rounded-3xl aspect-[16/10] cursor-pointer" onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">
+                    <img src="./assets/header-anwendungen-emobility-ipetronik-gmbh-und-co-kgx1920x800-46c70a3b.jpg" 
+                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="E-Mobility testing">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <div class="text-xs tracking-widest text-white/70">E-MOBILITY</div>
+                        <div class="text-2xl font-semibold tracking-tight">Battery &amp; HV Systems</div>
+                    </div>
+                </div>
+
+                <!-- Acoustics -->
+                <div class="group relative overflow-hidden rounded-3xl aspect-[16/10] cursor-pointer" onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">
+                    <img src="./assets/header-anwendungen-akustik-2-ipetronik-gmbh-und-co-kg-1920x1000-1b9b4456.jpg" 
+                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Acoustics testing">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <div class="text-xs tracking-widest text-white/70">ACOUSTICS &amp; NVH</div>
+                        <div class="text-2xl font-semibold tracking-tight">Vehicle Sound Engineering</div>
+                    </div>
+                </div>
+
+                <!-- Flight Testing -->
+                <div class="group relative overflow-hidden rounded-3xl aspect-[16/10] cursor-pointer" onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">
+                    <img src="./assets/header-anwendungen-flugtests-1-ipetronik-gmbh-und-co-kg-1920x1000-273aaa4f.jpg" 
+                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Flight testing">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <div class="text-xs tracking-widest text-white/70">AEROSPACE</div>
+                        <div class="text-2xl font-semibold tracking-tight">Flight Test Instrumentation</div>
+                    </div>
+                </div>
+
+                <!-- Brake & Chassis -->
+                <div class="group relative overflow-hidden rounded-3xl aspect-[16/10] cursor-pointer" onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">
+                    <img src="./assets/header-anwendungen-bremsen-test-2-ipetronik-gmbh-und-co-kgx1920x800-4644ec2a.jpg" 
+                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Brake testing">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <div class="text-xs tracking-widest text-white/70">CHASSIS &amp; BRAKES</div>
+                        <div class="text-2xl font-semibold tracking-tight">Durability &amp; Safety Testing</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-6">
+                <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })" 
+                        class="text-sm text-[#22f0d3] hover:underline">View all application areas →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE PRODUCTS -->
+    <section id="products" class="bg-slate-50 py-12 border-y">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-6">
+                <div>
+                    <div class="text-xs font-semibold tracking-widest text-[#E30613]">COMPLETE PORTFOLIO</div>
+                    <h2 class="section-header text-slate-900">Measurement systems for the most demanding environments</h2>
+                </div>
+                <button onclick="showProductFinder()" class="text-sm font-medium text-[#0033A0] flex items-center gap-2">
+                    <i class="fa-solid fa-robot"></i> AI Product Finder
+                </button>
+            </div>
+
+            <!-- Filters -->
+            <div class="flex flex-wrap gap-2 mb-6 items-center">
+                <div class="flex bg-white border border-slate-200 rounded-xl p-1 text-sm">
+                    <button onclick="filterProducts('all')" class="filter-btn active px-5 py-1.5 rounded-lg font-medium" data-filter="all">All</button>
+                    <button onclick="filterProducts('loggers')" class="filter-btn px-5 py-1.5 rounded-lg" data-filter="loggers">Data Loggers</button>
+                    <button onclick="filterProducts('modules')" class="filter-btn px-5 py-1.5 rounded-lg" data-filter="modules">Modules</button>
+                    <button onclick="filterProducts('software')" class="filter-btn px-5 py-1.5 rounded-lg" data-filter="software">Software</button>
+                    <button onclick="filterProducts('testbenches')" class="filter-btn px-5 py-1.5 rounded-lg" data-filter="testbenches">Test Benches</button>
+                </div>
+                
+                <input id="product-search" type="text" placeholder="Search products..." oninput="filterProducts(currentFilter)"
+                       class="flex-1 min-w-[220px] bg-white border border-slate-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-[#0033A0]">
+                
+                <button onclick="showComparison()" class="px-5 py-2 text-xs font-semibold border border-slate-300 rounded-xl hover:bg-white flex items-center gap-2">
+                    <i class="fa-solid fa-balance-scale"></i> COMPARE (<span id="compare-count">0</span>)
+                </button>
+            </div>
+
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+        </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="section-header mb-8">Precision across industries</h2>
+        <div class="grid md:grid-cols-3 gap-5">
+            <div class="p-7 border border-slate-200 rounded-2xl bg-white">
+                <div class="font-semibold text-xl">Automotive &amp; E-Mobility</div>
+                <div class="text-sm text-slate-600 mt-3 space-y-1">
+                    <div>• Drivetrain &amp; thermal management</div>
+                    <div>• Battery &amp; HV system validation</div>
+                    <div>• Fleet testing &amp; endurance</div>
+                    <div>• Vehicle acoustics &amp; NVH</div>
+                </div>
+            </div>
+            <div class="p-7 border border-slate-200 rounded-2xl bg-white">
+                <div class="font-semibold text-xl">Aerospace &amp; Defense</div>
+                <div class="text-sm text-slate-600 mt-3 space-y-1">
+                    <div>• Flight test instrumentation</div>
+                    <div>• Environmental control systems</div>
+                    <div>• Propulsion &amp; fuel systems</div>
+                </div>
+            </div>
+            <div class="p-7 border border-slate-200 rounded-2xl bg-white">
+                <div class="font-semibold text-xl">Industry &amp; Research</div>
+                <div class="text-sm text-slate-600 mt-3 space-y-1">
+                    <div>• Process monitoring</div>
+                    <div>• Component test benches</div>
+                    <div>• Railway &amp; heavy duty</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOBAL PRESENCE -->
+    <section id="global" class="bg-slate-50 border-y py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-5/12">
+                    <div class="text-xs font-semibold tracking-widest text-[#E30613]">WORLDWIDE NETWORK</div>
+                    <h2 class="section-header mt-2">We are there for you worldwide</h2>
+                    <p class="mt-3 text-slate-600">Headquartered in Baden-Baden with strategic locations in Germany, India, the United States, United Kingdom, France and Sweden.</p>
+                    <button onclick="showAllLocations()" class="mt-5 text-sm font-medium text-[#0033A0]">Show all locations →</button>
+                </div>
+                <div class="lg:w-7/12">
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6">
+                        <div class="text-xs font-semibold text-slate-500 mb-3">SELECT A REGION</div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="location-pills"></div>
+                        <div id="location-detail" class="mt-4 text-sm min-h-[90px] p-4 bg-slate-50 rounded-xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-16">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="text-xs font-semibold tracking-[2px] text-[#E30613]">OUR PROMISE</div>
+            <h2 class="section-header mt-2">Precise measuring results — even under the strictest requirements.</h2>
+            <p class="mt-4 text-lg text-slate-600">Whether in the desert or in ice and snow. Our 360° concept allows us to rethink the mobility of the future with innovative software and hardware solutions.</p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-5 text-sm">
+            <div class="p-6 border border-slate-200 rounded-2xl">
+                <div class="font-semibold">German engineering excellence</div>
+                <div class="mt-2 text-slate-600">We combine German engineering skill with a high degree of innovation and a strong instinct for the issues of the future.</div>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-2xl">
+                <div class="font-semibold">People at the core</div>
+                <div class="mt-2 text-slate-600">Our innovative strength is based on the people at IPETRONIK. Their ideas and the shared goal of making the world a little better.</div>
+            </div>
+            <div class="p-6 border border-slate-200 rounded-2xl">
+                <div class="font-semibold">Sustainability &amp; responsibility</div>
+                <div class="mt-2 text-slate-600">We advocate sustainable mobility and careful handling of resources. Accurate results help our customers drive the ecological transformation.</div>
+            </div>
+        </div>
+        
+        <div class="text-center text-xs text-slate-500 mt-8">ISO 9001:2015 • ISO 14001:2015 • TISAX • EN 61010-1 • NSAI</div>
+    </section>
+
+    <!-- SOFTWARE & DIGITALIZATION -->
+    <section class="max-w-7xl mx-auto px-6 py-14 border-t border-slate-200">
+        <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-5">
+                <div class="text-xs font-semibold tracking-[2px] text-[#E30613]">SOFTWARE &amp; DIGITALIZATION</div>
+                <h3 class="text-4xl font-semibold tracking-tighter mt-2">From data to decisions.<br>Worldwide.</h3>
+                <p class="mt-4 text-slate-600">IPEmotion, IPEcloud2, dataLog and IPEmotion ME — powerful tools for configuration, real-time fleet monitoring, high-volume data analysis and remote access.</p>
+                <a href="#products" class="inline-block mt-6 text-sm font-medium text-[#0033A0]">Explore the full software suite →</a>
+            </div>
+            <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="group relative overflow-hidden rounded-3xl">
+                    <img src="./assets/software-digitalisierung-navi-01-2-ipetronik-gmbh-und-co-kg-528x430-f7d0f07b.jpg" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="IPEmotion software interface">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 p-5 text-white">
+                        <div class="text-xs tracking-widest opacity-75">IPEMOTION RT &amp; PC</div>
+                        <div class="font-semibold text-xl tracking-tight">Universal DAQ &amp; Analysis</div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-3xl">
+                    <img src="./assets/software-digitalisierung-navi-03-ipetronik-gmbh-und-co-kg-528x430-347d7048.jpg" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="IPEcloud2 fleet management platform">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 p-5 text-white">
+                        <div class="text-xs tracking-widest opacity-75">IPECLOUD2</div>
+                        <div class="font-semibold text-xl tracking-tight">Global Fleet Management</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="max-w-7xl mx-auto px-6 pb-16">
+        <h3 class="font-semibold text-xl mb-5">Latest from IPETRONIK</h3>
+        <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="border border-slate-200 rounded-2xl p-6">
+                <div class="text-emerald-600 text-xs font-medium">EVENT • 27.–29.05.2026</div>
+                <div class="font-semibold mt-1">Automotive Testing Expo Europe 2026</div>
+            </div>
+            <div class="border border-slate-200 rounded-2xl p-6">
+                <div class="text-sky-600 text-xs font-medium">NEWS • 09.02.2026</div>
+                <div class="font-semibold mt-1">New ARCOS 2 evo Data Logger launched</div>
+            </div>
+            <div class="border border-slate-200 rounded-2xl p-6">
+                <div class="text-sky-600 text-xs font-medium">NEWS • 09.02.2026</div>
+                <div class="font-semibold mt-1">New Distribution Partner in Japan</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAREERS -->
+    <section id="careers" class="bg-slate-50 border-y py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-5">
+                    <div class="text-xs font-semibold tracking-widest text-[#E30613]">#INNOVATEASONE</div>
+                    <h2 class="section-header mt-2">Join our team</h2>
+                    <p class="mt-3 text-slate-600">At IPETRONIK we are more than a global technology company — we are a multicultural innovation hub transforming the future of mobility.</p>
+                    <a href="https://careers.ipetronik.com/en/" target="_blank" class="inline-block mt-6 text-sm font-semibold px-6 py-2.5 bg-[#0033A0] text-white rounded-xl">View open positions →</a>
+                </div>
+                <div class="lg:col-span-7">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200">
+                            <div class="font-medium text-xs text-[#0033A0]">FURTHER DEVELOPMENT</div>
+                            <div class="mt-3">Structured onboarding, individual training and clear career prospects.</div>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200">
+                            <div class="font-medium text-xs text-[#0033A0]">WORK-LIFE BALANCE</div>
+                            <div class="mt-3">Flexible hours, mobile working and individual working time models.</div>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200">
+                            <div class="font-medium text-xs text-[#0033A0]">BENEFITS</div>
+                            <div class="mt-3">Company pension, supplementary health insurance, EV charging, job bike.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="max-w-3xl mx-auto px-6 py-16">
+        <div class="text-center mb-8">
+            <div class="text-xs font-semibold tracking-widest text-[#E30613]">LET'S TALK</div>
+            <h2 class="font-display text-4xl font-semibold tracking-tight mt-1">Ready to accelerate your next project?</h2>
+        </div>
+
+        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="bg-white border border-slate-200 rounded-3xl p-8 space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1">FULL NAME</label>
+                    <input required type="text" class="w-full border border-slate-200 rounded-xl px-5 py-3 text-sm focus:border-[#0033A0]" placeholder="Your name">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1">WORK EMAIL</label>
+                    <input required type="email" class="w-full border border-slate-200 rounded-xl px-5 py-3 text-sm focus:border-[#0033A0]" placeholder="you@company.com">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1">COMPANY</label>
+                    <input type="text" class="w-full border border-slate-200 rounded-xl px-5 py-3 text-sm focus:border-[#0033A0]" placeholder="Your company">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-500 mb-1">INTEREST</label>
+                    <select id="interest" class="w-full border border-slate-200 rounded-xl px-5 py-3 text-sm focus:border-[#0033A0]">
+                        <option>Data Loggers</option>
+                        <option>Modules &amp; Sensors</option>
+                        <option>Software &amp; Cloud (IPEcloud2)</option>
+                        <option>Test Bench Solutions</option>
+                        <option>Engineering Services</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label class="block text-xs font-medium text-slate-500 mb-1">MESSAGE</label>
+                <textarea required rows="4" class="w-full border border-slate-200 rounded-2xl px-5 py-4 text-sm focus:border-[#0033A0]" placeholder="Tell us about your project..."></textarea>
+            </div>
+            <div class="flex justify-end">
+                <button type="submit" class="px-10 py-3 bg-[#0033A0] text-white font-semibold rounded-xl text-sm">SEND MESSAGE</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t py-9 text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-y-4">
+            <div>© 2026 IPETRONIK GmbH &amp; Co. KG • Im Rollfeld 28, 76532 Baden-Baden, Germany</div>
+            <div class="md:text-right">Part of INDUS Holding AG • <a href="#" class="hover:text-slate-700">Legal Notices</a> • <a href="#" class="hover:text-slate-700">Privacy</a></div>
+        </div>
+    </footer>
+
+    <!-- FLOATING CHAT -->
+    <button onclick="openLiveChat()" class="fixed bottom-6 right-6 flex items-center gap-x-2 shadow-lg bg-white border border-slate-300 px-4 h-11 rounded-2xl text-sm font-medium hover:bg-slate-50">
+        <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+        <span>Live Chat</span>
+    </button>
+
+    <!-- MODALS (Product, Compare, Success, Finder) -->
+    <div id="product-modal" onclick="if (event.target.id==='product-modal') closeProductModal()" class="hidden fixed inset-0 bg-black/70 z-[70] items-center justify-center p-5">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-2xl rounded-2xl overflow-hidden">
+            <div id="modal-content" class="p-8"></div>
+        </div>
+    </div>
+
+    <div id="compare-modal" onclick="if (event.target.id==='compare-modal') closeCompareModal()" class="hidden fixed inset-0 bg-black/70 z-[70] items-center justify-center p-5">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-5xl rounded-2xl p-7">
+            <div class="flex justify-between mb-4">
+                <div class="font-semibold text-xl">Product Comparison</div>
+                <button onclick="closeCompareModal()" class="text-3xl">×</button>
+            </div>
+            <div id="compare-content"></div>
+        </div>
+    </div>
+
+    <div id="success-modal" onclick="closeSuccessModal()" class="hidden fixed inset-0 bg-black/70 z-[80] items-center justify-center">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white mx-5 w-full max-w-md rounded-2xl p-8 text-center">
+            <div class="mx-auto w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-5">
+                <i class="fa-solid fa-check text-3xl text-emerald-600"></i>
+            </div>
+            <div class="text-2xl font-semibold">Thank you.</div>
+            <p class="text-slate-600 mt-2">Your inquiry has been received. A specialist will contact you within 24 hours.</p>
+            <button onclick="closeSuccessModal()" class="mt-6 w-full py-3 border border-slate-300 rounded-xl text-sm font-medium">CLOSE</button>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind + brand colors
+        function initTailwind() {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'ip-blue': '#0033A0',
+                            'ip-red': '#E30613'
+                        }
+                    }
+                }
+            };
+        }
+
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 30) {
+                    navbar.classList.add('nav-scrolled');
+                } else {
+                    navbar.classList.remove('nav-scrolled');
+                }
+            });
+        }
+
+        // Stats counters
+        function initCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        counters.forEach(counter => {
+                            const target = parseInt(counter.dataset.target || '0');
+                            if (!target) return;
+                            let current = 0;
+                            const increment = Math.ceil(target / 48);
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= target) {
+                                    counter.textContent = target.toLocaleString() + (target === 10000 ? '+' : '');
+                                    clearInterval(timer);
+                                } else {
+                                    counter.textContent = current.toLocaleString();
+                                }
+                            }, 35);
+                        });
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.6 });
+            
+            const stats = document.querySelector('.grid.grid-cols-2');
+            if (stats) observer.observe(stats);
+        }
+
+        // Reveal animations
+        function initReveals() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal', 'visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.modern-card, .bg-white.border').forEach(el => observer.observe(el));
+        }
+
+        // Products data (faithful to original site)
+        const products = [
+            { id: "ipe891", name: "IPE891", category: "loggers", tag: "NEW", desc: "Developed for the E/E System of the Future. High-channel data logger with 10GbE support.", specs: { Channels: "1000+", "Ethernet": "10 GbE + 100BASE-T1", Temp: "-40…+85°C" } },
+            { id: "arcos2", name: "ARCOS 2 evo", category: "loggers", tag: "NEW", desc: "Modular, highly compact and powerful. Scalable for fleet testing and experimental validation.", specs: { Channels: "Up to 512", "Form factor": "Ultra compact", Temp: "-40…+70°C" } },
+            { id: "ethos2", name: "ETHOS 2", category: "loggers", tag: "PREMIUM", desc: "High performance data logger for automotive Ethernet networks.", specs: { Channels: "High-speed", Ethernet: "Multi-port GbE", Temp: "-20…+60°C" } },
+            { id: "m-log", name: "M-LOG V3", category: "loggers", tag: "", desc: "Modular data logger for fleet management. Proven workhorse for large-scale testing.", specs: { Channels: "Modular", Ethernet: "100 MbE", Temp: "-40…+85°C" } },
+            { id: "m3", name: "M3-Series", category: "modules", tag: "MODULAR", desc: "Next generation measurement modules for temperature, voltage, current and high-speed inputs.", specs: { Types: "Thermo / HV / Analog", Rate: "Up to 250 Hz", Temp: "-40…+85°C" } },
+            { id: "ipe853", name: "IPE853", category: "loggers", tag: "", desc: "Scalable data logger for fleet management and experimental validation.", specs: { Channels: "256", Ethernet: "1 GbE", Temp: "-40…+70°C" } },
+            { id: "cloud2", name: "IPEcloud2", category: "software", tag: "CLOUD", desc: "Maximum efficiency in fleet management. Real-time monitoring of vehicle signals worldwide.", specs: { Scale: "Hundreds of vehicles", Access: "Global real-time", Features: "Dashboards + Alerts" } },
+            { id: "ipemotion-rt", name: "IPEmotion RT", category: "software", tag: "", desc: "Intuitive data logger software for all logger types. Unified experience on Linux and Windows.", specs: { Platforms: "Linux + Windows", Modes: "Logger / Gateway", Analysis: "Full online & offline" } },
+            { id: "datalog", name: "dataLog", category: "software", tag: "FLEET", desc: "Professional solution for complex high-volume measurement tasks in AV and camera/LiDAR testing.", specs: { Volume: "Very high", Vehicles: "Large fleets", Use: "AV & ADAS" } },
+            { id: "ipemotion-pc", name: "IPEmotion PC", category: "software", tag: "", desc: "Flexible DAQ software for configuration, recording, analysis and reporting.", specs: { Domains: "Thermal / ECU / Brake", Ease: "Very high", Reporting: "One-click" } },
+            { id: "me", name: "IPEmotion ME", category: "software", tag: "MOBILE", desc: "Mobile Edition. Visualize and control your measurement systems live from anywhere.", specs: { Access: "Mobile + Desktop", Control: "Remote logger control", Viz: "Live widgets" } },
+            { id: "bench", name: "Custom Test Benches", category: "testbenches", tag: "ENGINEERED", desc: "Tailor-made stationary and mobile test bench systems for component and vehicle level testing.", specs: { Scope: "Full turnkey", Integration: "All IPETRONIK HW", Support: "On-site commissioning" } },
+            { id: "eng", name: "Engineering Services", category: "engineering", tag: "SERVICES", desc: "Individual engineering solutions: test planning, instrumentation, data analysis and consulting.", specs: { Scope: "Full project support", Experts: "Thermo + Acoustics", Location: "On-site worldwide" } }
+        ];
+
+        let currentFilter = 'all';
+        let selectedForCompare = [];
+
+        function renderProducts(filtered) {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+            
+            filtered.forEach(p => {
+                const isSel = selectedForCompare.includes(p.id);
+                const card = document.createElement('div');
+                card.className = `product-card bg-white border ${isSel ? 'border-[#0033A0] ring-1 ring-[#0033A0]/30' : 'border-slate-200'} rounded-2xl p-6 cursor-pointer`;
+                card.innerHTML = `
+                    <div class="flex justify-between">
+                        <div class="font-semibold text-xl">${p.name}</div>
+                        ${p.tag ? `<div class="product-tag px-2.5 py-0.5 bg-slate-100 text-slate-600 rounded text-xs font-medium">${p.tag}</div>` : ''}
+                    </div>
+                    <div class="text-sm text-slate-600 mt-3 line-clamp-3">${p.desc}</div>
+                    <div class="mt-6 pt-4 border-t flex justify-between text-xs items-center">
+                        <div onclick="event.stopImmediatePropagation(); toggleCompare('${p.id}', this)" class="px-3 py-1 rounded-xl border text-xs ${isSel ? 'border-[#0033A0] text-[#0033A0]' : 'hover:bg-slate-50'}">
+                            ${isSel ? 'SELECTED' : 'COMPARE'}
+                        </div>
+                        <div class="text-[#0033A0] font-medium">Details →</div>
+                    </div>
+                `;
+                card.onclick = () => showProductModal(p.id);
+                grid.appendChild(card);
+            });
+            updateCompareCount();
+        }
+
+        function updateCompareCount() {
+            const el = document.getElementById('compare-count');
+            if (el) el.textContent = selectedForCompare.length;
+        }
+
+        function filterProducts(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-[#0033A0]', 'text-white');
+                if (btn.dataset.filter === filter) btn.classList.add('active', 'bg-[#0033A0]', 'text-white');
+            });
+            
+            const q = document.getElementById('product-search').value.toLowerCase();
+            let res = products;
+            
+            if (filter !== 'all') res = res.filter(p => p.category === filter);
+            if (q) res = res.filter(p => p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
+            
+            renderProducts(res);
+        }
+
+        function toggleCompare(id, el) {
+            event.stopImmediatePropagation();
+            if (selectedForCompare.includes(id)) {
+                selectedForCompare = selectedForCompare.filter(x => x !== id);
+            } else {
+                if (selectedForCompare.length >= 3) { alert("Maximum 3 products for comparison."); return; }
+                selectedForCompare.push(id);
+            }
+            filterProducts(currentFilter);
+        }
+
+        function showProductModal(id) {
+            const p = products.find(x => x.id === id);
+            if (!p) return;
+            
+            const modal = document.getElementById('product-modal');
+            const content = document.getElementById('modal-content');
+            
+            let specs = '';
+            Object.keys(p.specs).forEach(k => specs += `<div class="flex justify-between py-2 border-b text-sm"><span class="text-slate-500">${k}</span><span class="font-medium">${p.specs[k]}</span></div>`);
+            
+            content.innerHTML = `
+                <div class="flex justify-between">
+                    <div>
+                        <div class="text-xs text-[#0033A0] font-medium">${p.category.toUpperCase()}</div>
+                        <div class="text-3xl font-semibold tracking-tight">${p.name}</div>
+                    </div>
+                    <button onclick="closeProductModal()" class="text-3xl text-slate-400">×</button>
+                </div>
+                <div class="mt-5 text-sm text-slate-600">${p.desc}</div>
+                <div class="mt-7"><div class="text-xs font-medium text-slate-500 mb-2">KEY SPECIFICATIONS</div><div class="border rounded-xl p-1">${specs}</div></div>
+                <div class="flex gap-3 mt-8">
+                    <button onclick="closeProductModal(); document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="flex-1 py-3 bg-[#0033A0] text-white rounded-xl font-semibold text-sm">REQUEST QUOTE</button>
+                    <button onclick="addToCompareFromModal('${id}')" class="flex-1 py-3 border rounded-xl font-medium text-sm">ADD TO COMPARISON</button>
+                </div>
+            `;
+            modal.classList.remove('hidden'); modal.classList.add('flex');
+        }
+        
+        function addToCompareFromModal(id) {
+            closeProductModal();
+            if (!selectedForCompare.includes(id) && selectedForCompare.length < 3) selectedForCompare.push(id);
+            filterProducts(currentFilter);
+            setTimeout(showComparison, 300);
+        }
+
+        function closeProductModal() {
+            const m = document.getElementById('product-modal');
+            m.classList.remove('flex'); m.classList.add('hidden');
+        }
+
+        function showComparison() {
+            if (selectedForCompare.length === 0) { alert("Select products using the COMPARE buttons on the cards."); return; }
+            
+            const modal = document.getElementById('compare-modal');
+            const c = document.getElementById('compare-content');
+            const items = products.filter(p => selectedForCompare.includes(p.id));
+            
+            let html = `<table class="w-full text-sm"><thead><tr><th class="text-left pb-3 text-xs text-slate-500 w-28">SPEC</th>`;
+            items.forEach(it => html += `<th class="text-left pb-3 font-semibold px-3">${it.name}</th>`);
+            html += `</tr></thead><tbody>`;
+            
+            const keys = new Set(); items.forEach(it => Object.keys(it.specs).forEach(k => keys.add(k)));
+            Array.from(keys).forEach(k => {
+                html += `<tr><td class="py-2 text-xs text-slate-500 border-t">${k}</td>`;
+                items.forEach(it => html += `<td class="py-2 px-3 border-t font-medium">${it.specs[k] || '—'}</td>`);
+                html += `</tr>`;
+            });
+            html += `</tbody></table>`;
+            html += `<div class="mt-8 flex justify-end gap-3"><button onclick="closeCompareModal()" class="px-6 py-2 border rounded-xl text-sm">CLOSE</button><button onclick="closeCompareModal();document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="px-6 py-2 bg-[#0033A0] text-white rounded-xl text-sm font-semibold">REQUEST PROPOSAL</button></div>`;
+            
+            c.innerHTML = html;
+            modal.classList.remove('hidden'); modal.classList.add('flex');
+        }
+        
+        function closeCompareModal() {
+            const m = document.getElementById('compare-modal');
+            m.classList.remove('flex'); m.classList.add('hidden');
+        }
+
+        // Locations
+        const locations = [
+            {id:"baden", region:"Germany", name:"Baden-Baden (HQ)", addr:"Im Rollfeld 28, 76532 Baden-Baden"},
+            {id:"berg", region:"Germany", name:"Bergkirchen", addr:"Kreuzackerstr. 4a, 85232 Bergkirchen"},
+            {id:"duss", region:"Germany", name:"Düsseldorf", addr:"Parsevalstraße 9a, 40468 Düsseldorf"},
+            {id:"eich", region:"Germany", name:"Eichstätt", addr:"Industriestraße 10, 85072 Eichstätt"},
+            {id:"munich", region:"Germany", name:"Munich", addr:"Frankfurter Ring 164, 80807 München"},
+            {id:"india", region:"Asia", name:"IPETRONIK India", addr:"HMT Main Road 20, 560022 Bangalore"},
+            {id:"usa", region:"Americas", name:"IPETRONIK Inc. (USA)", addr:"24445 Northwestern Hwy, Suite 114, Southfield, MI 48075"},
+            {id:"uk", region:"Europe", name:"United Kingdom", addr:"SN15 Chippenham, United Kingdom"},
+            {id:"france", region:"Europe", name:"France", addr:"28 rue Schweighaeuser, 67000 Strasbourg"},
+            {id:"sweden", region:"Europe", name:"Sweden", addr:"53196 Lidköping, Sweden"}
+        ];
+
+        function initLocations() {
+            const c = document.getElementById('location-pills');
+            if (!c) return;
+            const regs = [...new Set(locations.map(l => l.region))];
+            regs.forEach(r => {
+                const b = document.createElement('button');
+                b.className = `text-left px-3 py-1.5 text-sm rounded-xl border hover:bg-slate-100 ${r==='Germany' ? 'border-[#0033A0] bg-[#0033A0]/5' : 'border-slate-200'}`;
+                b.innerHTML = `${r} <span class="text-xs text-slate-400">(${locations.filter(x=>x.region===r).length})</span>`;
+                b.onclick = () => showRegion(r);
+                c.appendChild(b);
+            });
+            setTimeout(() => showRegion('Germany'), 400);
+        }
+        
+        function showRegion(region) {
+            const d = document.getElementById('location-detail');
+            const list = locations.filter(l => l.region === region);
+            let h = `<div class="text-xs font-medium text-[#0033A0] mb-2">${region} — ${list.length} locations</div>`;
+            list.forEach(l => h += `<div class="py-1 text-sm cursor-pointer hover:text-[#0033A0]" onclick="showLocationDetail('${l.id}')">${l.name}</div>`);
+            d.innerHTML = h;
+        }
+        
+        function showLocationDetail(id) {
+            const l = locations.find(x => x.id === id);
+            const d = document.getElementById('location-detail');
+            d.innerHTML = `<div class="font-medium">${l.name}</div><div class="text-sm text-slate-600 mt-0.5">${l.addr}</div><button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); document.getElementById('location-detail').innerHTML=''" class="mt-3 text-xs text-[#0033A0]">Contact this office →</button>`;
+        }
+        
+        function showAllLocations() {
+            const d = document.getElementById('location-detail');
+            d.innerHTML = locations.map(l => `<div class="text-xs py-0.5"><span class="font-mono text-[#0033A0]">${l.region}</span> ${l.name}</div>`).join('');
+        }
+
+        // Product finder mock
+        function showProductFinder() {
+            const m = document.getElementById('product-modal');
+            const c = document.getElementById('modal-content');
+            c.innerHTML = `
+                <div class="flex justify-between"><div class="text-2xl font-semibold">Product Finder</div><button onclick="closeProductModal()" class="text-3xl">×</button></div>
+                <div class="mt-6 text-sm">What kind of testing are you planning?</div>
+                <div class="grid grid-cols-2 gap-3 mt-4 text-sm">
+                    <div onclick="selectFinder(this,'fleet')" class="p-4 border rounded-xl cursor-pointer hover:bg-slate-50">Fleet testing &amp; endurance</div>
+                    <div onclick="selectFinder(this,'ev')" class="p-4 border rounded-xl cursor-pointer hover:bg-slate-50">E-Mobility / Battery</div>
+                    <div onclick="selectFinder(this,'eth')" class="p-4 border rounded-xl cursor-pointer hover:bg-slate-50">Ethernet / High-speed</div>
+                    <div onclick="selectFinder(this,'thermal')" class="p-4 border rounded-xl cursor-pointer hover:bg-slate-50">Thermal / HVAC</div>
+                </div>
+            `;
+            m.classList.remove('hidden'); m.classList.add('flex');
+        }
+        
+        function selectFinder(el, type) {
+            document.querySelectorAll('#modal-content .border').forEach(x => x.classList.remove('border-[#0033A0]'));
+            el.classList.add('border-[#0033A0]');
+            setTimeout(() => {
+                closeProductModal();
+                filterProducts(type === 'ev' || type === 'thermal' ? 'modules' : 'loggers');
+                document.getElementById('products').scrollIntoView({behavior:'smooth'});
+            }, 700);
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.getElementById('success-modal').classList.add('flex');
+            e.target.reset();
+        }
+        function closeSuccessModal() {
+            const m = document.getElementById('success-modal');
+            m.classList.remove('flex'); m.classList.add('hidden');
+        }
+
+        function openLiveChat() {
+            const w = document.createElement('div');
+            w.className = 'fixed bottom-24 right-6 w-80 bg-white border shadow-2xl rounded-2xl overflow-hidden z-[80]';
+            w.innerHTML = `
+                <div class="bg-[#0033A0] text-white px-5 py-3 text-sm font-medium flex justify-between"><span>IPETRONIK Support</span><span onclick="this.closest('.fixed').remove()" class="cursor-pointer">×</span></div>
+                <div class="p-5 text-sm h-48 overflow-auto">Hello! How can we help with your measurement project today?</div>
+                <div class="p-4 border-t flex gap-2"><input class="flex-1 border rounded-xl px-4 py-2 text-sm" placeholder="Type your question..."><button class="px-5 bg-[#0033A0] text-white rounded-xl text-sm" onclick="this.closest('.fixed').querySelector('.p-5').innerHTML+='<div class=\\'mt-3 text-right\\'>Thank you. An engineer will reply shortly.</div>'">Send</button></div>
+            `;
+            document.body.appendChild(w);
+        }
+
+        function showMegaMenu() {
+            document.getElementById('mega-menu').classList.remove('hidden'); document.getElementById('mega-menu').classList.add('flex');
+        }
+        function hideMegaMenu() {
+            const m = document.getElementById('mega-menu');
+            m.classList.remove('flex'); m.classList.add('hidden');
+        }
+        function toggleMobileMenu() {
+            const p = document.getElementById('mobile-panel');
+            if (p) { p.remove(); return; }
+            const panel = document.createElement('div');
+            panel.id = 'mobile-panel';
+            panel.className = 'lg:hidden fixed inset-0 z-[65] pt-20';
+            panel.innerHTML = `<div class="mx-4 mt-2 bg-white border rounded-2xl p-6 text-lg"><div class="flex flex-col gap-y-4"><a href="#about">About</a><a href="#products">Products</a><a href="#solutions">Solutions</a><a href="#global">Global</a><a href="#careers">Careers</a><a href="#contact">Contact</a><button onclick="showProductFinder();this.closest('#mobile-panel').remove()" class="mt-3 text-sm border py-2 rounded-xl">Product Finder</button></div></div>`;
+            document.body.appendChild(panel);
+        }
+
+        function initProducts() {
+            const search = document.getElementById('product-search');
+            const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+            if (allBtn) allBtn.classList.add('active', 'bg-[#0033A0]', 'text-white');
+            
+            renderProducts(products);
+            
+            if (search) search.addEventListener('input', () => filterProducts(currentFilter));
+        }
+
+        function initEverything() {
+            initTailwind();
+            initNavbar();
+            initCounters();
+            initReveals();
+            initLocations();
+            initProducts();
+            
+            // Keyboard shortcut
+            document.addEventListener('keydown', e => {
+                if (e.key === '/' && document.activeElement.tagName === 'BODY') {
+                    e.preventDefault();
+                    const s = document.getElementById('product-search');
+                    document.getElementById('products').scrollIntoView({behavior:'smooth'});
+                    setTimeout(() => s && s.focus(), 500);
+                }
+            });
+            
+            // Demo: pre-select one product
+            setTimeout(() => {
+                if (selectedForCompare.length === 0) {
+                    selectedForCompare = ['arcos2'];
+                    const g = document.getElementById('products-grid');
+                    if (g) filterProducts('all');
+                }
+            }, 1600);
+
+            // Simple gallery scroller for the product carousel
+            window.scrollGallery = function(dir) {
+                const gallery = document.getElementById('gallery');
+                if (!gallery) return;
+                const cardWidth = 340; // approx min-width + gap
+                gallery.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
+            };
+            
+            console.log('%c[IPETRONIK] Modern corporate site ready with your assets.', 'color:#64748b');
+        }
+
+        window.onload = initEverything;
+        window.IPETRONIK = { filterProducts, showProductModal };
+    </script>
+</body>
+</html>
